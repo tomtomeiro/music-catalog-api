@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  
+spring:
+  database:
+    driverClassName: com.mysql.jdbc.Driver
+  datasource:
+    validateQuery: SELECT 1
+    url: jdbc:mysql://www.2code.com.mx:3306/codecom1_test?useSSL=false&serverTimeZone=UTC
+    username: codecom1_academia
+    password: FVf$UZeeGa30$
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        default_schema: codecom1_test
+        
