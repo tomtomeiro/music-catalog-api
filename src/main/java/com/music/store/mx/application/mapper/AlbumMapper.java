@@ -8,25 +8,33 @@
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 * General Public License for more details.
 *
-* Nombre de archivo: AlbumRepository.java
+* Nombre de archivo: AlbumMapper.java
 * Autor: tflores
 * Fecha de creación: 21 sep. 2021
 */
-package com.music.store.mx.application.repository;
+package com.music.store.mx.application.mapper;
 
-import java.util.List;
+import com.music.store.mx.application.dto.AlbumDto;
 import com.music.store.mx.model.Album;
 
-/**
- * The Interface AlbumRepository.
- */
-public interface AlbumRepository {
-  
+public class AlbumMapper {
+
+  private AlbumMapper() {
+    super();
+  }
+
+  public static Album toModel(AlbumDto albumDto) {
+    return null;
+  }
+
   /**
-   * Find all.
+   * To dto.
    *
-   * @return the list
+   * @param album the album
+   * @return the album dto
    */
-  List<Album> findAll();
+  public static AlbumDto toDto(Album album) {
+    return null;
+  }
 
 }
