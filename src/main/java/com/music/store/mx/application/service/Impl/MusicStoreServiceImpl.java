@@ -21,8 +21,10 @@ import com.music.store.mx.application.dto.AlbumDto;
 import com.music.store.mx.application.dto.SongDto;
 import com.music.store.mx.application.mapper.SongMapper;
 import com.music.store.mx.application.mapper.AlbumMapper;
-import com.music.store.mx.application.repository.AlbumRepository;
-import com.music.store.mx.application.repository.SongRepository;
+
+import com.music.store.mx.application.repository.AlbumsRepository;
+
+import com.music.store.mx.application.repository.SongsRepository;
 import com.music.store.mx.application.service.MusicStoreService;
 
 
@@ -33,10 +35,10 @@ import com.music.store.mx.application.service.MusicStoreService;
 public class MusicStoreServiceImpl implements MusicStoreService {
 
   /** The album repository. */
-  private AlbumRepository albumRepository;
+  private AlbumsRepository albumRepository;
 
   /** The songs repository. */
-  private SongRepository songsRepository;
+  private SongsRepository songsRepository;
 
   /**
    * Instantiates a new music store service impl.
@@ -44,7 +46,7 @@ public class MusicStoreServiceImpl implements MusicStoreService {
    * @param albumRepository the album repository
    * @param songsRepository the songs repository
    */
-  public MusicStoreServiceImpl(AlbumRepository albumRepository, SongRepository songsRepository) {
+  public MusicStoreServiceImpl(AlbumsRepository albumRepository, SongsRepository songsRepository) {
     this.albumRepository = albumRepository;
     this.songsRepository = songsRepository;
   }

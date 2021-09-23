@@ -42,10 +42,10 @@ import lombok.Setter;
 public class SongDto {
   
   /** The song id. */
-  private Long song_Id;
+  private Long songId;
   
   /** The album id. */
-  private Long albumId;
+  private Long idAlbum;
   
   /** The title. */
   private String title;

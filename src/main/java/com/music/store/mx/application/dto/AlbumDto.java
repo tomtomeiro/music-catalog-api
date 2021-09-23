@@ -27,7 +27,7 @@ import lombok.Setter;
 @Builder
 public class AlbumDto {
   
-  private Long idAlbum;
+  private Long id_Album;
   
   private String title;
   

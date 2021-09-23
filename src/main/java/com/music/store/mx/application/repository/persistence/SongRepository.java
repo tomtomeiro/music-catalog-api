@@ -3,36 +3,57 @@ package com.music.store.mx.application.repository.persistence;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Repository;
+import com.music.store.mx.application.dto.SongDto;
+import com.music.store.mx.application.mapper.SongMapper;
 import com.music.store.mx.application.repository.SongCrudRepository;
+import com.music.store.mx.application.repository.SongsRepository;
 import com.music.store.mx.model.Song;
 
 @Repository
-public class SongRepository {
+public class SongRepository implements SongsRepository  {
   private SongCrudRepository songCrudRepository;
   
-  public List<Song> getAll(){
-    return  songCrudRepository.findAll();
+  private SongMapper mapper;
+  
+  public List<SongDto> getAll(){
+    List<Song> song = songCrudRepository.findAll();
+    return mapper.toSongDtos(song) ;
   }
   
-  public List<Song> getByAlbum(Long idAlbum){
-    return songCrudRepository.findByIdAlbum(idAlbum);
+  public Optional<List<SongDto>> getByAlbum(Long idAlbum){
+    List<Song> song= songCrudRepository.findByIdAlbum(idAlbum) ;
+    return Optional.of(mapper.toSongDtos(song)) ;
+  }
+  
+  @Override
+  public Optional<SongDto> getSong(Long songId) {
+    return songCrudRepository.findById(songId).map(song -> mapper.toSongDto(song));
     
   }
   
-  public Optional<Song> getSong(Long idSong){
-    return songCrudRepository.findById(idSong); 
+  @Override
+  public SongDto save(SongDto songDto) {
+    Song song = mapper.toSong(songDto);
+    return mapper.toSongDto(songCrudRepository.save(song));
   }
   
-  public Song save(Song song) {
-    return songCrudRepository.save(song);
-  }
-  
-  public void deletebyId(Long idSong) {
-    songCrudRepository.deleteById(idSong);
+  @Override
+  public void delete(Long songId) {
+    songCrudRepository.deleteById(songId);
+    
   }
   
   public Long getCountRegister() {
     return songCrudRepository.count();
   }
+
+ 
+
+
+
+
+
+  
+ 
 
 }

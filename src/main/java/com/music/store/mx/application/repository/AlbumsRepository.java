@@ -21,7 +21,7 @@ import com.music.store.mx.application.dto.SongDto;
 import com.music.store.mx.model.Album;
 import com.music.store.mx.model.Song;
 
-public interface AlbumRepository  {
+public interface AlbumsRepository  {
   
   List<AlbumDto> findAll();
 
