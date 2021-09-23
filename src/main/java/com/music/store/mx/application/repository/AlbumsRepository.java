@@ -15,6 +15,7 @@
 package com.music.store.mx.application.repository;
 
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.music.store.mx.application.dto.AlbumDto;
 import com.music.store.mx.application.dto.SongDto;
@@ -23,12 +24,16 @@ import com.music.store.mx.model.Song;
 
 public interface AlbumsRepository  {
   
-  List<AlbumDto> findAll();
+  List<AlbumDto> getAll();
 
-  List<AlbumDto> findByAuthor(String author);  
+  AlbumDto findByAuthor(String author);  
   
-  List<AlbumDto> save(SongDto song); 
+  Optional<AlbumDto> getByIdAlbum(Long album);
   
-  void delete(Long songId);
+  AlbumDto save(SongDto song); 
+  
+  void delete(Long albumId);
+
+  AlbumDto save(AlbumDto album);
   
 }

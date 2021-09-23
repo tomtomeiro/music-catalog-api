@@ -1,6 +1,7 @@
 package com.music.store.mx.application.mapper;
 
 
+import java.util.List;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -24,6 +25,8 @@ public interface AlbumMapper {
     
   })
   AlbumDto toAlbumDto(Album album);
+  
+  List<AlbumDto> toAlbumDtos(List<Album> album);
   
   @InheritInverseConfiguration
   @Mapping(target="song", ignore= true)

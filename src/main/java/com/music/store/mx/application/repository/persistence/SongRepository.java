@@ -2,6 +2,7 @@ package com.music.store.mx.application.repository.persistence;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.music.store.mx.application.dto.SongDto;
 import com.music.store.mx.application.mapper.SongMapper;
@@ -11,8 +12,10 @@ import com.music.store.mx.model.Song;
 
 @Repository
 public class SongRepository implements SongsRepository  {
-  private SongCrudRepository songCrudRepository;
   
+  @Autowired
+  private SongCrudRepository songCrudRepository;
+  @Autowired
   private SongMapper mapper;
   
   public List<SongDto> getAll(){
