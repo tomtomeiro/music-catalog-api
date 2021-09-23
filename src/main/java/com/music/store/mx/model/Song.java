@@ -19,6 +19,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,26 +43,31 @@ import lombok.Setter;
 @Table(name = "Cancion")
 public class Song {
 
-  /** The song id. */
+  
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "idCancion", nullable = false, length = 11)
   private Long songId;
+  
+  @Column(name="id_Album", nullable = false)
+  private Long idAlbum;
 
-  /** The title. */
+  
   @Column(name = "titulo", nullable = false, length = 45)
   private String title;
 
-  /** The album id. */
-  @Column(name = "idAlbum", nullable = false, length = 11, insertable = false)
-  private Long albumId;
-
-  /** The author. */
+  
+  
   @Column(name = "autor", nullable = true, length = 45)
   private String author;
 
-  /** The length. */
+  
   @Column(name = "duracion", nullable = false)
   private Float length;
+  
+  @ManyToOne
+  @JoinColumn(name = "id_Album", nullable = false, updatable= false, insertable = false)
+  private Album album;
+
 
 }

@@ -15,10 +15,12 @@
 package com.music.store.mx.model;
 
 import java.sql.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,41 +31,40 @@ import lombok.Setter;
  */
 @Getter
 
-/**
- * Sets the coverage.
- *
- * @param coverage the new coverage
- */
+
 @Setter
 public class Album {
   
-  /** The album id. */
+ 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "idAlbum", nullable = false, length = 11)
-  private Integer albumId;
+  private Long id_Album;
   
-  /** The title. */
+  @OneToMany(mappedBy = "album")
+  private List<Song> song;
+  
+ 
   @Column(name = "titulo", nullable = false, length = 45)
   private String title;
   
-  /** The launching. */
+ 
   @Column(name = "lanzamiento", nullable = false)
   private Date launching;
   
-  /** The record company. */
+  
   @Column(name = "disquera", nullable = false, length = 45)
   private String recordCompany;
   
-  /** The singer. */
+ 
   @Column(name = "cantante", nullable = false, length = 45)
   private String singer;
   
-  /** The gender. */
+
   @Column(name = "genero", nullable = false, length = 11)
   private String gender;
   
-  /** The coverage. */
+
   @Column(name = "cobertura", nullable = false, length = 250)
   private String coverage;
 

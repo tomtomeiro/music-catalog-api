@@ -15,18 +15,20 @@
 package com.music.store.mx.application.repository;
 
 import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.music.store.mx.application.dto.AlbumDto;
+import com.music.store.mx.application.dto.SongDto;
 import com.music.store.mx.model.Album;
+import com.music.store.mx.model.Song;
 
-/**
- * The Interface AlbumRepository.
- */
-public interface AlbumRepository {
+public interface AlbumRepository  {
   
-  /**
-   * Find all.
-   *
-   * @return the list
-   */
-  List<Album> findAll();
+  List<AlbumDto> findAll();
 
+  List<AlbumDto> findByAuthor(String author);  
+  
+  List<AlbumDto> save(SongDto song); 
+  
+  void delete(Long songId);
+  
 }

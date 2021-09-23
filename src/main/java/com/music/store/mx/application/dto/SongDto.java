@@ -14,6 +14,7 @@
 */
 package com.music.store.mx.application.dto;
 
+import com.music.store.mx.model.Album;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,18 +42,20 @@ import lombok.Setter;
 public class SongDto {
   
   /** The song id. */
-  private Long songId;
-  
-  /** The title. */
-  private String title;
+  private Long song_Id;
   
   /** The album id. */
   private Long albumId;
+  
+  /** The title. */
+  private String title;
   
   /** The author. */
   private String author;
   
   /** The length. */
   private Float length;
+  
+  private Album album;
 
 }

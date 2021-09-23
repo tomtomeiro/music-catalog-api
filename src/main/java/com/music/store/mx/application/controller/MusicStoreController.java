@@ -21,7 +21,6 @@ public class MusicStoreController {
     this.musicStoreService=  musicStoreService;
   }
   
- 
     @GetMapping("/saludar")
     public String saludar() {
       return "Hola mundo";

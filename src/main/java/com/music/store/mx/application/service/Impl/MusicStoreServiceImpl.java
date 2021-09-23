@@ -22,7 +22,7 @@ import com.music.store.mx.application.dto.SongDto;
 import com.music.store.mx.application.mapper.SongMapper;
 import com.music.store.mx.application.mapper.AlbumMapper;
 import com.music.store.mx.application.repository.AlbumRepository;
-import com.music.store.mx.application.repository.SongsRepository;
+import com.music.store.mx.application.repository.SongRepository;
 import com.music.store.mx.application.service.MusicStoreService;
 
 
@@ -36,7 +36,7 @@ public class MusicStoreServiceImpl implements MusicStoreService {
   private AlbumRepository albumRepository;
 
   /** The songs repository. */
-  private SongsRepository songsRepository;
+  private SongRepository songsRepository;
 
   /**
    * Instantiates a new music store service impl.
@@ -44,7 +44,7 @@ public class MusicStoreServiceImpl implements MusicStoreService {
    * @param albumRepository the album repository
    * @param songsRepository the songs repository
    */
-  public MusicStoreServiceImpl(AlbumRepository albumRepository, SongsRepository songsRepository) {
+  public MusicStoreServiceImpl(AlbumRepository albumRepository, SongRepository songsRepository) {
     this.albumRepository = albumRepository;
     this.songsRepository = songsRepository;
   }
@@ -54,23 +54,23 @@ public class MusicStoreServiceImpl implements MusicStoreService {
    *
    * @return the list
    */
-  @Override
+  /*@Override
   public List<AlbumDto> retrieveAlbums() {
     return this.albumRepository.findAll().stream().map(AlbumMapper::toDto)
         .collect(Collectors.toList());
-  }
+  }*/
 
   /**
    * Retrieve songs.
    *
    * @return the list
    */
-  @Override
+  /*@Override
   public List<SongDto> retrieveSongs() {
     return this.songsRepository.findAll().stream().map(SongMapper::toDto)
         .collect(Collectors.toList());
 
-  }
+  }*/
 
   /**
    * Retrieve songs.
@@ -80,6 +80,18 @@ public class MusicStoreServiceImpl implements MusicStoreService {
    */
   @Override
   public List<SongDto> retrieveSongs(Long albumId) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public List<AlbumDto> retrieveAlbums() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public List<SongDto> retrieveSongs() {
     // TODO Auto-generated method stub
     return null;
   }
