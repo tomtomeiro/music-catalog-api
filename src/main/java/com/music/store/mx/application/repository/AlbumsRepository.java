@@ -30,8 +30,7 @@ public interface AlbumsRepository  {
   
   Optional<AlbumDto> getByIdAlbum(Long album);
   
-  AlbumDto save(SongDto song); 
-  
+
   void delete(Long albumId);
 
   AlbumDto save(AlbumDto album);

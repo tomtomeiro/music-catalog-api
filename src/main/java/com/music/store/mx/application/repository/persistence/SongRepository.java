@@ -41,8 +41,9 @@ public class SongRepository implements SongsRepository  {
   }
   
   @Override
-  public void delete(Long songId) {
+  public boolean delete(Long songId) {
     songCrudRepository.deleteById(songId);
+    return false;
     
   }
   

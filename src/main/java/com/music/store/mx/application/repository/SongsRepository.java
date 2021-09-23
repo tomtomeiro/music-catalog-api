@@ -15,7 +15,7 @@ public interface SongsRepository {
   
   SongDto save(SongDto song);
   
-  void delete(Long songId);
+  boolean delete(Long songId);
 
  
 }

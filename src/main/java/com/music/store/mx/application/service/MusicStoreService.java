@@ -23,25 +23,5 @@ import com.music.store.mx.application.dto.SongDto;
  */
 public interface MusicStoreService {
 
-  /**
-   * Retrieve albums.
-   *
-   * @return the list
-   */
-  List<AlbumDto> retrieveAlbums();
-
-  /**
-   * Retrieve songs.
-   *
-   * @return the list
-   */
-  List<SongDto> retrieveSongs();
-
-  /**
-   * Retrieve songs.
-   *
-   * @param albumId the album id
-   * @return the list
-   */
-  List<SongDto> retrieveSongs(Long albumId);
+ 
 }

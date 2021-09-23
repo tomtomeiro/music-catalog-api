@@ -2,6 +2,7 @@ package com.music.store.mx.application.repository.persistence;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.music.store.mx.application.dto.AlbumDto;
 import com.music.store.mx.application.dto.SongDto;
@@ -13,9 +14,9 @@ import com.music.store.mx.model.Song;
 
 @Repository
 public abstract class AlbumRepository implements AlbumsRepository {
-  
+  @Autowired
   private AlbumCrudRepository albumCrudRepository;
-  
+  @Autowired
   private AlbumMapper mapper;
 
   @Override
